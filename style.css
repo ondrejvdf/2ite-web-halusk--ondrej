@@ -1,0 +1,483 @@
+/* =========================================================
+   ZÁKLAD STRÁNKY (HTML + BODY)
+   ========================================================= */
+
+/* Plynulé scrollování při kliknutí na anchor odkazy (#sekce) */
+html { 
+  scroll-behavior: smooth; 
+}
+
+/* Základní nastavení stránky */
+body{
+  margin: 0;                 
+  padding: 0;                
+  background: #0f1115;       
+  color: #f2f2f2;            
+
+  /* hlavní font webu (Inter + fallbacky) */
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+  line-height: 1.65;         
+  font-weight: 400;          
+}
+
+
+/* =========================================================
+   TOPBAR (fixní horní lišta s logem + menu)
+   ========================================================= */
+
+/* Hlavní horní lišta */
+#topbar{
+  height: 64px;              
+  background: #000000D9;     
+
+  /* layout: logo vlevo, menu vpravo */
+  display: flex;             
+  align-items: center;       
+
+  /* velké odsazení na desktop */
+  padding: 0 100px;          
+
+  /* topbar je pořád nahoře i při scrollu */
+  position: fixed;           
+  top: 0;                    
+  left: 0;                   
+
+  width: 100%;               
+
+  box-sizing: border-box;    
+  z-index: 9999;             /* ať je nad sliderem */
+}
+
+/* =========================
+   PŘEPÍNAČ JAZYKA (CZ / EN)
+   - umístěný v topbaru
+   - pouze vizuální styl
+   - logika přepínání je v JS
+   ========================= */
+
+/* Styl tlačítka přepínání jazyka */
+#langToggle{
+  margin-left: 20px;                  
+  padding: 6px 10px;                  
+  border-radius: 10px;                
+  border: 1px solid #FFFFFF26;        
+  background: rgba(255,255,255,0.05); 
+  color: #FFFFFFBF;                   
+  font-size: 14px;                    
+  cursor: pointer;                    /* kurzor ruky */
+}
+
+/* Hover efekt pro lepší UX */
+#langToggle:hover{
+  background: rgba(255,255,255,0.1);  
+}
+
+/* Logo v topbaru */
+#logo{
+  width: 120px;            
+  height: auto;            
+  margin-right: auto;      
+}
+
+/* Navigace (obal pro odkazy) v topbaru */
+#menu{
+  display: flex;           /* odkazy vedle sebe */
+  gap: 24px;               
+}
+
+/* Styl jednotlivých odkazů v menu */
+.nav-link{
+  padding: 8px 10px;       /* klikací plocha */
+  border-radius: 12px;     
+  color: #2FB9FF;          
+  font-size: 16px;        
+  font-weight: 500;        
+  letter-spacing: 0.02em;  
+  text-decoration: none;   
+}
+
+/* Hover efekt na odkazy */
+.nav-link:hover{
+  background: #FFFFFF0F;   
+  color: #f2f2f2;          
+  text-decoration: none;   /
+}
+
+
+/* =========================================================
+   SLIDER (hero obrázek přes celou obrazovku)
+   ========================================================= */
+
+/* Kontejner slideru (hero sekce) */
+.slider{
+  position: relative;     
+  width: 100vw;            
+  height: 100vh;           
+  overflow: hidden;        
+}
+
+/* Overlay přes obrázek (gradient pro čitelnost textu) */
+.slider::after{
+  content: "";             
+  position: absolute;      
+  inset: 0;                /* top/right/bottom/left = 0 */
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.25) 0%,    
+    rgba(0,0,0,0.35) 50%,   
+    rgba(0,0,0,0.7) 100%    
+  );
+  pointer-events: none;    /* aby overlay neblokoval klikání */
+}
+
+/* Samotný obrázek ve slideru */
+.slider img{
+  width: 100%;             
+  height: 100%;            
+  object-fit: cover;       
+  object-position: center; 
+}
+
+
+/* =========================================================
+   ŠIPKY (ovládání slideru)
+   ========================================================= */
+
+/* Základní styl šipek */
+.arrow{
+  position: absolute;              
+  top: 50%;                        
+  transform: translateY(-50%);     
+
+  width: 56px;                     
+  height: 56px;
+  border-radius: 999px;            
+
+  border: 1px solid #FFFFFF33;     
+  background: #00000059;           
+
+  color: white;                    
+  font-size: 34px;                 
+
+  cursor: pointer;                 /* ruka */
+  z-index: 10;                     /* nad overlay i obrázkem */
+}
+
+/* Umístění šipek */
+.arrow.left{ left: 20px; }         
+.arrow.right{ right: 20px; }       
+
+
+/* =========================================================
+   TEČKY (indikátor snímků)
+   ========================================================= */
+
+/* Kontejner teček */
+.dots{
+  position: absolute;              
+  bottom: 24px;                    
+  left: 50%;                       
+  transform: translateX(-50%);     
+  display: flex;                   
+  gap: 10px;                       
+  z-index: 10;                     /* nad overlay */
+}
+
+/* Tečka jako button */
+.dot{
+  appearance: none;                /* odstraní default vzhled tlačítka */
+  border: none;                    
+  padding: 0;                      
+  background: #FFFFFF59;           
+  width: 10px;                     
+  height: 10px;
+  border-radius: 50%;              /* kruh */
+  cursor: pointer;                 /* ruka */
+  display: block;                  /* jistota rozměrů */
+  transition: transform 150ms ease, background 150ms ease; /* animace */
+}
+
+/* Focus pro klávesnici (přístupnost) */
+.dot:focus-visible{
+  outline: 2px solid #2FB9FF;      /* modrý focus ring */
+  outline-offset: 3px;             /* odsazení od tečky */
+}
+
+/* Aktivní tečka */
+.dot.active{
+  background: #2FB9FF;             
+  transform: scale(1.4);           
+}
+
+
+/* =========================================================
+   HERO BOX (text přes slider)
+   ========================================================= */
+
+/* Box s textem přes obrázek */
+.hero{
+  position: absolute;              
+  left: 80px;                      
+  bottom: 90px;                    
+  z-index: 10;                     /* nad overlay */
+
+  max-width: 720px;                
+  padding: 18px 20px;              
+  border-radius: 18px;             
+
+  background: #00000059;           
+  border: 1px solid #FFFFFF1F;     
+  backdrop-filter: blur(10px);     /* “sklo” efekt */
+}
+
+/* Text pod nadpisem v hero */
+.hero p{
+  margin: 0;                       
+  font-size: 15px;                 
+  font-weight: 400;                
+  color: #FFFFFFBF;                
+}
+
+/* Nadpis v hero */
+.hero h1{
+  margin: 0 0 8px;                 
+  font-size: clamp(34px, 5vw, 52px); 
+  line-height: 1.1;                
+  font-weight: 600;                
+  letter-spacing: -0.02em;         
+}
+
+/* Odsazení prvního bloku kvůli fixed topbaru */
+#uvod{
+  margin-top: 60px;                /* posun dolů, aby topbar nepřekrýval */
+}
+
+
+/* =========================================================
+   SEKCE = KARTY (obsah webu)
+   ========================================================= */
+
+/* Základní styl pro každou sekci */
+section{
+  scroll-margin-top: 80px;         /* anchor odkazy nebudou pod topbarem */
+  max-width: 900px;                
+  margin: 0 auto 60px auto;        
+  padding: 60px 60px;              
+  background: #FFFFFF08;           
+  border: 1px solid #FFFFFF14;     
+  border-radius: 16px;             
+  box-sizing: border-box;          
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;       /* hover animace */
+  will-change: transform;          /* hint pro výkon */
+}
+
+/* Jemné zvětšení sekcí (jen pokud je reveal aktivní + visible) */
+.reveal.is-visible:hover{
+  transform: translateY(0) scale(1.02);          
+  border-color: rgba(47,185,255,0.35);          
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);    
+}
+
+/* Nadpis v sekci */
+section h2{
+  margin-top: 0;                   
+  margin-bottom: 20px;             
+  font-size: clamp(22px, 3vw, 28px); 
+  font-weight: 500;               
+  letter-spacing: -0.01em;        
+  color: #2FB9FF;                 
+}
+
+/* Text v sekci */
+section p{
+  max-width: 700px;               /* limit šířky pro čitelnost */
+  margin-bottom: 20px;            
+  font-size: 16px;                
+  line-height: 1.65;              
+  color: #FFFFFFD9;               
+}
+
+/* Odkazy v kontaktu (CZ id) */
+#contact a{
+  text-decoration: none;          /* bez podtržení */
+  font-size: 16px;                
+  font-weight: 500;               
+  letter-spacing: 0.01em;         
+  color: #FFFFFFD9;               
+}
+
+/* Ikonky v kontaktu (EN id) */
+#contact img{
+  vertical-align: middle;         /* zarovná na střed řádku */
+  margin-right: 10px;             
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+/* Spodní část stránky */
+.footer{
+  margin-top: 120px;              
+  padding: 40px 0;                
+  border-top: 1px solid #FFFFFF26;
+  text-align: center;             
+  color: #FFFFFFB3;               
+}
+
+
+/* =========================================================
+   SCROLL REVEAL (animace při scrollu)
+   ========================================================= */
+
+/* Výchozí stav prvků před zobrazením */
+.reveal{
+  opacity: 0;                     /* neviditelné */
+  transform: translateY(12px);    /* lehce posunuté dolů */
+  filter: blur(3px);              /* rozmazání */
+
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease,
+    filter 650ms ease;            /* plynulé odhalení */
+
+  transition-delay: var(--d, 0ms);/* možnost zpoždění přes CSS proměnnou */
+  will-change: opacity, transform, filter; /* hint pro výkon */
+}
+
+/* Aktivní stav (když je prvek v viewportu) */
+.reveal.is-visible{
+  opacity: 1;                     /* viditelné */
+  transform: translateY(0) scale(1); /* zpět na místo */
+  filter: blur(0);                /* bez rozmazání */
+}
+
+
+/* Přístupnost: když někdo nechce animace */
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    transition: none;             /* vypnout přechody */
+    opacity: 1;                   /* rovnou viditelné */
+    transform: none;              /* bez posunů */
+    filter: none;                 /* bez blur */
+  }
+}
+
+
+/* =========================================================
+   MOBILE STYLY (telefony a malé displeje)
+   Platí pouze pokud je šířka <= 700px
+   ========================================================= */
+@media (max-width: 700px){
+
+  /* ===============================
+     TOPBAR – zalamování na mobilu
+     =============================== */
+  #topbar{
+    height: auto;                 
+    min-height: 60px;             
+    padding: 10px 14px;           
+    gap: 12px;                    
+    flex-wrap: wrap;              /* dovolí zalomení do více řádků */
+    justify-content: space-between;/* rozložení prvků */
+  }
+
+  /* Logo */
+  #logo{
+    width: 105px;                 /* zmenšení loga */
+    margin-right: 0;              
+  }
+
+  /* Menu */
+  #menu{
+    width: 100%;                  
+    gap: 10px;                    
+    justify-content: flex-start;  
+    flex-wrap: wrap;              
+  }
+
+  /* Odkazy*/
+  .nav-link{
+    font-size: 14px;              
+    padding: 10px 12px;           /* větší klikací plocha */
+    border-radius: 14px;          
+    background: rgba(255,255,255,0.05); 
+  }
+
+  /* ===============================
+     SLIDER – výška pro mobil
+     =============================== */
+  .slider{
+    height: 92svh;                /* bezpečnější viewport jednotka na mobilu */
+  }
+
+  /* Šipky */
+  .arrow{
+    width: 46px;                  
+    height: 46px;
+    font-size: 30px;              
+    display: grid;                /* grid pro centrování */
+    place-items: center;          /* obsah přesně doprostřed */
+    line-height: 1;               /* jistota, že znak nesjíždí */
+  }
+
+  .arrow.left{ left: 10px; }      
+  .arrow.right{ right: 10px; }
+
+  /* Tečky*/
+  .dots{
+    bottom: 14px;                 
+    gap: 8px;                     
+  }
+
+  /* ===============================
+     HERO – text přes obrázek
+     =============================== */
+  .hero{
+    left: 12px;                   
+    right: 12px;                  
+    bottom: 70px;                 /* trochu výš kvůli tečkám */
+    max-width: 560px;             /* limit šířky */
+    margin: 0 auto;               /* centrování */
+    padding: 14px 14px;           
+  }
+
+  .hero h1{
+    font-size: 34px;              
+  }
+
+  .hero p{
+    font-size: 14px;              
+  }
+
+  /* ===============================
+     SEKCE (karty obsahu)
+     =============================== */
+  section{
+    padding: 26px 16px;           
+    margin: 0 12px 60px 12px;     
+  }
+
+  /* Na mobilu vypnout hover “scale” */
+  .reveal.is-visible:hover{
+    transform: translateY(0) scale(1); /* bez zvětšení */
+    box-shadow: none;                  /* bez stínu */
+  }
+
+  section p{
+    font-size: 15px;              
+  }
+
+  /* ===============================
+     FOOTER
+     =============================== */
+  .footer{
+    margin-top: 70px;             
+    padding: 26px 0;              
+  }
+}

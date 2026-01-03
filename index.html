@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <!-- =========================
+       ZÁKLADNÍ NASTAVENÍ STRÁNKY
+       ========================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Ondrej Haluska – Osobní One-Page Vizitka</title>
+  <meta
+    name="description"
+    content="Osobní one-page vizitka Ondřeje Halušky, studenta IT, prezentující jeho dovednosti, projekty a cestu k front-end vývoji."
+  />
+
+  <!-- =========================
+       SEO (vyhledávače + kanonická URL)
+       ========================= -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ondrejvdf.github.io/2ite-web-haluska-ondrej/" />
+  <meta name="author" content="Ondřej Haluška" />
+
+  <!-- =========================
+       BARVA PRO MOBILNÍ PROHLÍŽEČE / UI
+       ========================= -->
+  <meta name="theme-color" content="#0f1115" />
+
+  <!-- =========================
+       OPEN GRAPH (sdílení)
+       ========================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ondřej Haluška – Osobní One-Page Vizitka" />
+  <meta property="og:description" content="Osobní one-page vizitka Ondřeje Halušky." />
+  <meta property="og:image" content="https://ondrejvdf.github.io/2ite-web-haluska-ondrej/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://ondrejvdf.github.io/2ite-web-haluska-ondrej/" />
+
+  <!-- =========================
+       TWITTER / X
+       ========================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- =========================
+       IKONA + STYLY + JS
+       ========================= -->
+  <link rel="icon" href="navicon1.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- =========================
+   HERO / SLIDER
+   ========================= -->
+  <div class="slider">
+    <!-- =========================
+     TOPBAR
+     Obsahuje:
+     - logo
+     - navigaci
+     - přepínač jazyka CZ / EN
+    ========================= -->
+    <header id="topbar">
+
+      <img
+        src="Modrý_vektorový_logo _OH_1.png"
+        alt="OH logo"
+        id="logo"
+      />
+
+      <nav id="menu" aria-label="Hlavní navigace">
+        <a href="#uvod" class="nav-link" data-cs="Úvod" data-en="Intro">Úvod</a>
+        <a href="#Profil" class="nav-link" data-cs="Profil" data-en="Profil">Profil</a>
+        <a href="#pristup" class="nav-link" data-cs="Přístup" data-en="Approach">Přístup</a>
+        <a href="#contact" class="nav-link" data-cs="Kontakt" data-en="Contact">Kontakt</a>
+      </nav>
+
+      <!-- Přepínač jazyka -->
+      <button id="langToggle" aria-label="Přepnout jazyk">EN</button>
+
+    </header>
+
+    <img id="img" alt="Basketbal – akční fotografie" />
+
+    <div class="hero">
+      <h1 data-cs="Ondřej Haluška" data-en="Ondrej Haluska">Ondřej Haluška</h1>
+      <p data-cs="Moje budoucí já" data-en="My future self">Moje budoucí já</p>
+    </div>
+
+    <button class="arrow left" aria-label="Předchozí fotka">‹</button>
+    <button class="arrow right" aria-label="Další fotka">›</button>
+    <div class="dots" aria-label="Indikátor snímků"></div>
+  </div>
+  <!-- =========================
+   OBSAHOVÉ SEKCE
+   ========================= -->
+
+  <main>
+
+    <!-- ÚVOD -->
+    <section id="uvod" class="reveal" style="--d: 0ms;">
+      <h2 data-cs="Moje budoucí já" data-en="My future self">Moje budoucí já</h2>
+
+      <p
+        data-cs="Ahoj, jmenuji se Ondřej Haluška.Hraju basketbal v NBA a nastupuji za San Antonio Spurs."
+        data-en="Hi, my name is Ondřej Haluška. play basketball in the NBA for the San Antonio Spurs."
+      >
+        Ahoj, jmenuji se Ondřej Haluška.
+        Hraju basketbal v NBA a nastupuji za San Antonio Spurs.
+
+      </p>
+    </section>
+
+    <!-- Profil -->
+    <section id="profil" class="reveal" style="--d: 120ms;">
+  <h2 data-cs="Profil" data-en="Profile">Profil</h2>
+
+  <p
+    data-cs="Jmenuji se Ondřej Haluška a basketbal je pevnou součástí mého života. Není to jen sport, ale prostředí, ve kterém se učím přemýšlet, rozhodovat a nést odpovědnost. Hrát v NBA za San Antonio Spurs pro mě znamená být součástí systému, kde rozhodují detaily, trpělivost a dlouhodobá práce. "
+    data-en="My name is Ondřej Haluška, and basketball is an integral part of my life. It's not just a sport, but an environment in which I learn to think, make decisions, and take responsibility. Playing in the NBA for the San Antonio Spurs means being part of a system where details, patience, and long-term work are decisive."
+  >
+  Jmenuji se Ondřej Haluška a basketbal je pevnou součástí mého života.
+  Není to jen sport, ale prostředí, ve kterém se učím přemýšlet, rozhodovat a nést odpovědnost.
+  Hrát v NBA za San Antonio Spurs pro mě znamená být součástí systému, kde rozhodují detaily, trpělivost a dlouhodobá práce.
+  </p>
+
+  <p
+    data-cs="Každý den se pohybuji v prostředí, kde nic není zadarmo. Výkon nevzniká náhodou a úspěch není otázkou jednoho momentu. Je to součet malých rozhodnutí, opakované práce a schopnosti zůstat soustředěný i ve chvílích, kdy se nedaří. "
+    data-en="Every day, I move in an environment where nothing comes for free. Performance does not happen by chance, and success is not a matter of a single moment. It is the sum of small decisions, repeated work, and the ability to stay focused even in moments of failure. "
+  >
+  Každý den se pohybuji v prostředí, kde nic není zadarmo.
+  Výkon nevzniká náhodou a úspěch není otázkou jednoho momentu.
+  Je to součet malých rozhodnutí, opakované práce a schopnosti zůstat soustředěný i ve chvílích, kdy se nedaří.
+  </p>
+
+  <p
+    data-cs="Basketbal pro mě není únikem, ale výzvou. Nutí mě pracovat s tlakem, chybami i očekáváním. Učí mě přijímat realitu takovou, jaká je, a reagovat na ni klidně a věcně. Věřím, že právě tahle schopnost rozhoduje v klíčových momentech – na hřišti i mimo něj. "
+    data-en="For me, basketball is not an escape, but a challenge. It forces me to work with pressure, mistakes, and expectations. It teaches me to accept reality as it is and to respond to it calmly and objectively. I believe that this ability is what matters in key moments – both on and off the court."
+  >
+  Basketbal pro mě není únikem, ale výzvou. Nutí mě pracovat s tlakem, chybami i očekáváním.
+  Učí mě přijímat realitu takovou, jaká je, a reagovat na ni klidně a věcně.
+  Věřím, že právě tahle schopnost rozhoduje v klíčových momentech – na hřišti i mimo něj.
+</section>
+
+    <!-- PŘÍSTUP -->
+<section id="pristup" class="reveal" style="--d: 240ms;">
+  <h2 data-cs="Přístup" data-en="Approach">Přístup</h2>
+
+  <p
+    data-cs="Na hřišti i v běžném životě se snažím držet jednoduchých a srozumitelných pravidel. Soustředění, klid a schopnost reagovat ve správný moment považuji za základ každého výkonu."
+    data-en="On the court and in everyday life, I try to follow simple and clear principles. Focus, calmness and the ability to react at the right moment are the foundation of any performance."
+  >
+    Na hřišti i v běžném životě se snažím držet jednoduchých a srozumitelných pravidel.
+    Soustředění, klid a schopnost reagovat ve správný moment považuji za základ každého výkonu.
+  </p>
+
+  <p
+    data-cs="Velký důraz kladu na proces. Nezajímá mě rychlá cesta ani okamžité výsledky bez základu. Věřím, že skutečný posun vzniká tehdy, když se každý den věnuješ práci, která dává smysl – i když není vidět a nikdo ji zrovna neocení."
+    data-en="I place great emphasis on the process. I'm not interested in quick fixes or immediate results without a foundation. I believe that real progress comes when you devote yourself every day to work that makes sense—even if it's not visible and no one appreciates it at the moment."
+  >
+    Velký důraz kladu na proces. Nezajímá mě rychlá cesta ani okamžité výsledky bez základu.
+    Věřím, že skutečný posun vzniká tehdy, když se každý den věnuješ práci, která dává smysl – i když není vidět a nikdo ji zrovna neocení.
+  </p>
+
+  <p
+    data-cs="Chyby a tlak beru jako součást cesty. Nesnažím se jim vyhýbat, ale pracovat s nimi. Každá chyba je informace. Každá těžká situace je testem charakteru. Důležité je, jak na ni zareaguji a co si z ní odnesu do dalšího dne."
+    data-en="I take mistakes and pressure as part of the journey. I don't try to avoid them, but to work with them. Every mistake is information. Every difficult situation is a test of character. What matters is how I respond to it and what I take away from it for the next day."
+  >
+    Chyby a tlak beru jako součást cesty.
+    Nesnažím se jim vyhýbat, ale pracovat s nimi.
+    Každá chyba je informace. Každá těžká situace je testem charakteru.
+    Důležité je, jak na ni zareaguji a co si z ní odnesu do dalšího dne.
+  </p>
+
+  <p
+    data-cs="Snažím se zůstat konzistentní bez ohledu na okolnosti. Stabilita, disciplína a pozornost k detailům jsou podle mě to, co odděluje krátkodobý úspěch od dlouhodobého výkonu. Právě v detailech se rozhoduje, kdo vydrží a kdo ne."
+    data-en="I try to remain consistent regardless of the circumstances. In my opinion, stability, discipline, and attention to detail are what separate short-term success from long-term performance. It is the details that determine who will persevere and who will not."
+  >
+    Snažím se zůstat konzistentní bez ohledu na okolnosti.
+    Věřím, že právě stabilita, disciplína a schopnost zůstat soustředěný v detailech rozhodují o výsledku v dlouhém horizontu.
+  </p>
+</section>
+
+<!-- KONTAKT -->
+<section id="contact" class="reveal" style="--d: 360ms;">
+  <h2 data-cs="Kontakt" data-en="Contact">Kontakt</h2>
+
+  <p
+    data-cs="Pokud se chceš spojit nebo podívat na moji práci, tady jsou odkazy."
+    data-en="If you want to get in touch or see my work, here are the links."
+  >
+    Pokud se chceš spojit nebo podívat na moji práci, tady jsou odkazy.
+  </p>
+
+  <p>
+    <a
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=ondra21haluska@gmail.com&su=Kontakt%20z%20vizitky"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="gmail-svgrepo-com.svg" alt="Gmail ikona" width="25" />
+      Gmail
+    </a>
+  </p>
+
+  <p>
+    <a
+      href="https://github.com/ondrejvdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="github-svgrepo-com.svg" alt="GitHub ikona" width="25" />
+      GitHub
+    </a>
+  </p>
+</section>
+
+  </main>
+  <!-- ========================= 
+   FOOTER (spodní část stránky) 
+   ========================= -->
+  <footer class="footer">
+    <p>© 2026 Ondrej Haluska</p>
+  </footer>
+
+</body>
+</html>
