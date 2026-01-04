@@ -379,35 +379,55 @@ section p{
      TOPBAR – zalamování na mobilu
      =============================== */
   #topbar{
-    width: auto;                 
-    min-height: 60px;             
+    display: flex;
+    align-items: center;
+    width: 100%;                 
+    min-height: 60px;
     padding: 10px 12px;           
-    gap: 10px;                    
-    flex-wrap: wrap;              /* dovolí zalomení do více řádků */
-    justify-content: space-between;/* rozložení prvků */
+    gap: 8px;                    
+    flex-wrap: nowrap;              
+    background: rgba(0,0,0,0.85);
   }
 
   /* Logo */
   #logo{
-    width: 96px;                 /* zmenšení loga */
-    margin-right: 0;              
+    width: 88px;                 /* zmenšení loga */
+    flex-shrink: 0;
+    margin-right: 0;
+    height: auto;
+  }
+  #langToggle{
+    margin-left: auto;
+    padding: 6px 9px;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF26;
+    background: rgba(255,255,255,0.05);
+    font-size: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   /* Menu */
   #menu{
-    width: auto;
+    order: 3;
+    width: 100%;
     margin-left: auto;
-    gap: 8px;                    
+    display: flex;
+    gap: 6px;                    
     justify-content: flex-end;  
-    flex-wrap: wrap;              
+    flex-wrap: nowrap;
+    overflow: hidden;
+    align-items: center;
   }
 
   /* Odkazy*/
   .nav-link{
-    font-size: 13px;              
-    padding: 8px 10px;           /* větší klikací plocha */
+    font-size: 12px;              
+    padding: 6px 8px;           /* větší klikací plocha */
     border-radius: 12px;          
-    background: rgba(255,255,255,0.05); 
+    background: rgba(255,255,255,0.05);
+    white-space: nowrap;
   }
 
   /* ===============================
@@ -483,4 +503,5 @@ section p{
   }
 
 }
+
 
