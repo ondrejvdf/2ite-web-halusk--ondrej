@@ -378,47 +378,49 @@ section p{
   /* ===============================
      TOPBAR – zalamování na mobilu
      =============================== */
-  #topbar{
+#topbar{
     display: flex;
     align-items: center;
-    width: 100%;                 
+    flex-wrap: nowrap;
+    width: 100%;
     min-height: 60px;
-    padding: 10px 6px;           
-    gap: 8px;                    
-    flex-wrap: nowrap;              
+    padding: 10px 6px;
+    gap: 8px;
     background: rgba(0,0,0,0.85);
   }
 
   /* Logo */
-  #logo{
-    width: 88px;                 /* zmenšení loga */
+#logo{
+    width: 88px;
+    height: auto;
     flex-shrink: 0;
     margin-right: 0;
-    height: auto;
+    }
+
+
+  /* Menu */
+  #menu{
+    width: auto;
+    min-width: 0;
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: hidden;
+    justify-content: flex-start; /* nebo klidně smaž, default je ok */
   }
-  #langToggle{
+ #langToggle{
     margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+
     padding: 6px 9px;
     border-radius: 10px;
     border: 1px solid #FFFFFF26;
     background: rgba(255,255,255,0.05);
+    color: #FFFFFFBF;
     font-size: 13px;
     cursor: pointer;
-    flex-shrink: 0;
-    white-space: nowrap;
-  }
-
-  /* Menu */
-  #menu{
-    order: 3;
-    width: 100%;
-    margin-left: auto;
-    display: flex;
-    gap: 6px;                    
-    justify-content: flex-end;  
-    flex-wrap: nowrap;
-    overflow: hidden;
-    align-items: center;
   }
 
   /* Odkazy*/
@@ -502,6 +504,7 @@ section p{
     padding: 26px 0;              
   }
 }
+
 
 
 
