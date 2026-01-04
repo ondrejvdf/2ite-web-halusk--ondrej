@@ -383,7 +383,7 @@ section p{
     align-items: center;
     width: 100%;                 
     min-height: 60px;
-    padding: 10px 12px;           
+    padding: 10px 6px;           
     gap: 8px;                    
     flex-wrap: nowrap;              
     background: rgba(0,0,0,0.85);
@@ -424,7 +424,7 @@ section p{
   /* Odkazy*/
   .nav-link{
     font-size: 12px;              
-    padding: 2px 4px;           /* větší klikací plocha */
+    padding: 4px 6px;           /* větší klikací plocha */
     border-radius: 12px;          
     background: rgba(255,255,255,0.05);
     white-space: nowrap;
@@ -501,8 +501,8 @@ section p{
     margin-top: 70px;             
     padding: 26px 0;              
   }
-
 }
+
 
 
 
