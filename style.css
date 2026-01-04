@@ -101,7 +101,7 @@ body{
 .nav-link:hover{
   background: #FFFFFF0F;   
   color: #f2f2f2;          
-  text-decoration: none;   /
+  text-decoration: none;   
 }
 
 
@@ -379,33 +379,34 @@ section p{
      TOPBAR – zalamování na mobilu
      =============================== */
   #topbar{
-    height: auto;                 
+    width: auto;                 
     min-height: 60px;             
-    padding: 10px 14px;           
-    gap: 12px;                    
+    padding: 10px 12px;           
+    gap: 10px;                    
     flex-wrap: wrap;              /* dovolí zalomení do více řádků */
     justify-content: space-between;/* rozložení prvků */
   }
 
   /* Logo */
   #logo{
-    width: 105px;                 /* zmenšení loga */
+    width: 96px;                 /* zmenšení loga */
     margin-right: 0;              
   }
 
   /* Menu */
   #menu{
-    width: 100%;                  
-    gap: 10px;                    
-    justify-content: flex-start;  
+    width: 100%;
+    margin-left: auto;
+    gap: 8px;                    
+    justify-content: flex-end;  
     flex-wrap: wrap;              
   }
 
   /* Odkazy*/
   .nav-link{
-    font-size: 14px;              
-    padding: 10px 12px;           /* větší klikací plocha */
-    border-radius: 14px;          
+    font-size: 13px;              
+    padding: 8px 10px;           /* větší klikací plocha */
+    border-radius: 12px;          
     background: rgba(255,255,255,0.05); 
   }
 
@@ -480,4 +481,5 @@ section p{
     margin-top: 70px;             
     padding: 26px 0;              
   }
+
 }
