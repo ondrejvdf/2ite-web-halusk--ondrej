@@ -424,7 +424,7 @@ section p{
   /* Odkazy*/
   .nav-link{
     font-size: 12px;              
-    padding: 6px 8px;           /* větší klikací plocha */
+    padding: 2px 4px;           /* větší klikací plocha */
     border-radius: 12px;          
     background: rgba(255,255,255,0.05);
     white-space: nowrap;
@@ -503,5 +503,6 @@ section p{
   }
 
 }
+
 
 
